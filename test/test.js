@@ -11,9 +11,15 @@ describe('Stack:', function() {
     it('should return true if the stack is empty', function() {
       assert.equal(true, myStack.empty());
     });
-    it('should return false if the stack is not empty', function() {
-      myStack.push("testing empty")
+  });
+  describe('the push method', function() {
+    it('should add an item to the top of the stack', function() {
+      myStack.push("testing push");
       assert.equal(false, myStack.empty());
+    });
+    it('should return the element that was added to the stack', function() {
+      myStack.push("testing push");
+      assert.equal("another element", myStack.push("another element"));
     });
   });
   describe('the peek method', function() {
@@ -22,25 +28,14 @@ describe('Stack:', function() {
       assert.equal("testing peek", myStack.peek());
     });
   });
-  describe('the push method', function() {
-    it('should add an item to the top of the stack', function() {
-      myStack.push("testing push");
-      assert.equal(false, myStack.empty());
-      assert.equal("testing push", myStack.peek());
-    });
-    it('should return the element that was added to the stack', function() {
-      myStack.push("testing push");
-      assert.equal("another element", myStack.push("another element"));
-    });
-  });
   describe('the pop method', function() {
     it('should pop the top item off the stack', function() {
-      myStack.push("testing pop")
+      myStack.push("testing pop");
       myStack.pop();
       assert.equal(true, myStack.empty());
     });
     it('should return the item that was popped off the stack', function() {
-      myStack.push("testing pop")
+      myStack.push("testing pop");
       assert.equal("testing pop", myStack.pop());
     });
   });
